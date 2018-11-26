@@ -20,22 +20,23 @@ namespace notebook
 
             databaseService = new DatabaseService();
             databaseService.CreateDatabase();
-            databaseService.CreateTableWithData();
             var notes = databaseService.GetAllNotes();
 
             var listView = FindViewById<ListView>(Resource.Id.listView1);
             listView.Adapter = new CustomAdapter(this, notes);
 
-            var button = FindViewById<Button>(Resource.Id.button1);
+            var button = FindViewById<Button>(Resource.Id.button);
             button.Click += Button_Click;
         }
 
         private void Button_Click(object sender, System.EventArgs e)
         {
             Note note = new Note();
-            var input = FindViewById<EditText>(Resource.Id.input);
+            var inputTitle = FindViewById<EditText>(Resource.Id.inputTitle);
+            var inputContent = FindViewById<EditText>(Resource.Id.inputContent);
 
-            note.Content = input.Text;
+            note.Title = inputTitle.Text;
+            note.Content = inputContent.Text;
 
             databaseService.AddNote(note);
 

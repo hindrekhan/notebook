@@ -44,9 +44,11 @@ namespace notebook
                 view = context.LayoutInflater.Inflate(Resource.Layout.CustomRow, null);
             }
 
+            var title = view.FindViewById<TextView>(Resource.Id.title);
             var content = view.FindViewById<TextView>(Resource.Id.content);
 
             content.Text = items[position].Content;
+            title.Text = items[position].Title;
 
             return view;
         }

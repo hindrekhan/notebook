@@ -2429,8 +2429,8 @@ namespace notebook
 			// aapt resource value: 0x7f08003d
 			public const int bottom = 2131230781;
 			
-			// aapt resource value: 0x7f08008e
-			public const int button1 = 2131230862;
+			// aapt resource value: 0x7f08008f
+			public const int button = 2131230863;
 			
 			// aapt resource value: 0x7f080063
 			public const int buttonPanel = 2131230819;
@@ -2464,9 +2464,6 @@ namespace notebook
 			
 			// aapt resource value: 0x7f080093
 			public const int container = 2131230867;
-			
-			// aapt resource value: 0x7f080090
-			public const int content = 2131230864;
 			
 			// aapt resource value: 0x7f080066
 			public const int contentPanel = 2131230822;
@@ -2567,8 +2564,11 @@ namespace notebook
 			// aapt resource value: 0x7f0800ac
 			public const int info = 2131230892;
 			
-			// aapt resource value: 0x7f08008d
-			public const int input = 2131230861;
+			// aapt resource value: 0x7f08008e
+			public const int inputContent = 2131230862;
+			
+			// aapt resource value: 0x7f08008c
+			public const int inputTitle = 2131230860;
 			
 			// aapt resource value: 0x7f080059
 			public const int italic = 2131230809;
@@ -2591,14 +2591,14 @@ namespace notebook
 			// aapt resource value: 0x7f08008b
 			public const int linearLayout1 = 2131230859;
 			
-			// aapt resource value: 0x7f08008c
-			public const int linearLayout2 = 2131230860;
+			// aapt resource value: 0x7f08008d
+			public const int linearLayout2 = 2131230861;
 			
 			// aapt resource value: 0x7f08001d
 			public const int listMode = 2131230749;
 			
-			// aapt resource value: 0x7f08008f
-			public const int listView1 = 2131230863;
+			// aapt resource value: 0x7f080090
+			public const int listView1 = 2131230864;
 			
 			// aapt resource value: 0x7f080061
 			public const int list_item = 2131230817;
