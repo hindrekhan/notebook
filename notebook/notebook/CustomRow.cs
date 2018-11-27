@@ -45,13 +45,22 @@ namespace notebook
             }
 
             var title = view.FindViewById<TextView>(Resource.Id.title);
-            var content = view.FindViewById<TextView>(Resource.Id.content);
-
-            content.Text = items[position].Content;
             title.Text = items[position].Title;
+
+            view.Tag = position;
+            view.Click += View_Click;
 
             return view;
         }
 
+        private void View_Click(object sender, EventArgs e)
+        {
+            var position = (int)((View)sender).Tag;
+
+            Intent intent = new Intent(context, typeof(NoteActivity));
+            intent.PutExtra("pos", position);
+
+            context.StartActivity(intent);
+        }
     }
 }
