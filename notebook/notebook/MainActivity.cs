@@ -20,13 +20,19 @@ namespace notebook
 
             databaseService = new DatabaseService();
             databaseService.CreateDatabase();
-            var notes = databaseService.GetAllNotes();
-
-            var listView = FindViewById<ListView>(Resource.Id.listView1);
-            listView.Adapter = new CustomAdapter(this, notes);
 
             var button = FindViewById<Button>(Resource.Id.button);
             button.Click += Button_Click;
+        }
+
+        protected override void OnPostResume()
+        {
+            base.OnPostResume();
+
+            var notes = databaseService.GetAllNotes();
+
+            var listView = FindViewById<ListView>(Resource.Id.listView1);
+            listView.Adapter = new CustomAdapter(this, notes, databaseService);
         }
 
         private void Button_Click(object sender, System.EventArgs e)
@@ -43,7 +49,7 @@ namespace notebook
             var notes = databaseService.GetAllNotes();
 
             var listView = FindViewById<ListView>(Resource.Id.listView1);
-            listView.Adapter = new CustomAdapter(this, notes);
+            listView.Adapter = new CustomAdapter(this, notes, databaseService);
         }
     }
 }

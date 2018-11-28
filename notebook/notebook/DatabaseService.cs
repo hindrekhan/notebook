@@ -20,20 +20,30 @@ namespace notebook
 
         public void CreateDatabase()
         {
-            string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "mydatabas.db3");
+            string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "data.db3");
             db = new SQLiteConnection(dbPath);
             db.CreateTable<Note>();
         }
 
-        public void AddNote(Note name)
+        public void AddNote(Note note)
         {
-            db.Insert(name);
+            db.Insert(note);
+        }
+
+        public void UpdateNote(Note note)
+        {
+            db.Update(note);
         }
 
         public List<Note> GetAllNotes()
         {
             var table = db.Table<Note>();
             return table.ToList();
+        }
+
+        public void RemoveNote(Note note)
+        {
+            db.Delete(note);
         }
     }
 }

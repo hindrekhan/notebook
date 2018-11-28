@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
 
 namespace notebook
 {
@@ -16,11 +17,14 @@ namespace notebook
     {
         List<Note> items;
         Activity context;
+        DatabaseService databaseService;
+        bool initialized;
 
-        public CustomAdapter(Activity context, List<Note> items) : base()
+        public CustomAdapter(Activity context, List<Note> items, DatabaseService databaseService) : base()
         {
             this.context = context;
             this.items = items;
+            this.databaseService = databaseService;
         }
 
         public override Note this[int position]
@@ -48,7 +52,9 @@ namespace notebook
             title.Text = items[position].Title;
 
             view.Tag = position;
+            view.Click -= View_Click;
             view.Click += View_Click;
+            initialized = true;
 
             return view;
         }
@@ -58,8 +64,7 @@ namespace notebook
             var position = (int)((View)sender).Tag;
 
             Intent intent = new Intent(context, typeof(NoteActivity));
-            intent.PutExtra("pos", position);
-
+            intent.PutExtra("note", JsonConvert.SerializeObject(items[position]));
             context.StartActivity(intent);
         }
     }
