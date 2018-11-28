@@ -13,9 +13,10 @@
 		android:layout_height="wrap_content"
 		android:id="@+id/linearLayout1">
 		<android.support.design.widget.TextInputEditText
-			android:layout_width="300dp"
+			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:id="@+id/inputTitle" />
+			android:id="@+id/inputTitle"
+			android:hint="Title" />
 		<LinearLayout
 			android:orientation="horizontal"
 			android:minWidth="25px"
@@ -23,19 +24,21 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:id="@+id/linearLayout2">
-
 			<android.support.design.widget.TextInputEditText
-				android:layout_width="300dp"
+				android:layout_width="match_parent"
 				android:layout_height="match_parent"
-				android:id="@+id/inputContent" />
-			<Button
-				android:text="Button"
-				android:layout_width="wrap_content"
-				android:layout_height="match_parent"
-				android:id="@+id/button" />
+				android:id="@+id/inputContent"
+				android:hint="Content" />
 		</LinearLayout>
+		<Button
+		android:text="Add"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/button"
+		android:layout_below="@id/linearLayout1" />
 	</LinearLayout>
 	<ListView
+		android:paddingTop="32px"
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:layout_width="wrap_content"
