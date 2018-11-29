@@ -18,7 +18,6 @@ namespace notebook
         List<Note> items;
         Activity context;
         DatabaseService databaseService;
-        bool initialized;
 
         public CustomAdapter(Activity context, List<Note> items, DatabaseService databaseService) : base()
         {
@@ -54,7 +53,6 @@ namespace notebook
             view.Tag = position;
             view.Click -= View_Click;
             view.Click += View_Click;
-            initialized = true;
 
             return view;
         }
