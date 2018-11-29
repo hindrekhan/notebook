@@ -35,8 +35,10 @@ namespace notebook
 
         async void SimulateStartup()
         {
+            Intent intent = new Intent(Application.Context, typeof(MainActivity));
+            StartActivity(intent);
             await Task.Delay(3000);
-            StartActivity(new Intent(Application.Context, typeof(MainActivity)));
+            
         }
     }
 }
