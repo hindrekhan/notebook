@@ -16,8 +16,6 @@ namespace notebook
     [Activity(Theme = "@style/AppTheme.Splash", MainLauncher = true, NoHistory = true)]
     public class SplashActivity : AppCompatActivity
     {
-        static readonly string TAG = "X: " + typeof(SplashActivity).Name;
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
